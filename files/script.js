@@ -10,7 +10,7 @@ function getComputerChoice() {
             return 'paper'
         case 2:
             return 'scissors'
-    }
+    };
 };
 
 function getHumanChoice() {
@@ -21,8 +21,20 @@ function getHumanChoice() {
 function playRound(humanChoice, computerChoice) {
     let humanChoiceCase = humanChoice.toLowerCase();
     if (humanChoiceCase != computerChoice) {
-        console.log(`${humanChoiceCase} vs. ${computerChoice}!`)
+        if (
+            (humanChoiceCase == 'rock' && computerChoice == 'scissors') ||
+            (humanChoiceCase == 'paper' && computerChoice == 'rock') ||
+            (humanChoiceCase == 'scissors' && computerChoice == 'paper')
+        ) {
+            console.log(`You win! ${humanChoiceCase} beats ${computerChoice}!`)
+        } else if (
+            (humanChoice == 'rock' && computerChoice == 'paper') ||
+            (humanChoice == 'paper' && computerChoice == 'scissors') ||
+            (humanChoice == 'scissors' && computerChoice == 'rock')
+        ) {
+            console.log(`You lose! ${computerChoice} beats ${humanChoiceCase} !`)
+        };
     } else {
-        console.log('You tied!')
-    }
+        console.log(`You tied! ${humanChoiceCase} vs. ${computerChoice}!`)
+    };
 };
