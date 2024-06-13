@@ -20,3 +20,12 @@ function getHumanChoice() {
     let input = prompt('Choose rock, paper, or scissors.');
     return input
 }
+
+function playRound(humanChoice, computerChoice) {
+    let humanChoiceCase = humanChoice.toLowerCase();
+    if (humanChoiceCase != computerChoice) {
+        console.log(`${humanChoiceCase} vs. ${computerChoice}!`)
+    } else {
+        console.log('You tied!')
+    }
+};
